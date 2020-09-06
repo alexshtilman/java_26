@@ -9,8 +9,8 @@ public class Anagram {
 		if (word.length() == 0 || anagram.length() == 0 || word.length() != anagram.length() || word == anagram)
 			return false;
 
-		/*simple first solution
-		int[] count = new int[256];
+	/*simple first solution
+	int[] count = new int[256];
         for (int i = 0; i < str1.length(); i++) {
             count[str1.charAt(i)]++;
             count[str2.charAt(i)]--;
