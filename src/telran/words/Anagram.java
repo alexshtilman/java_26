@@ -22,18 +22,14 @@ public class Anagram {
         }
         return true;
         */
-		HashMap<Character, Long> map = new HashMap<Character, Long>();
-		for (int i=0;i<word.length();i++) {
-			map.compute(word.charAt(i), (w, prev) -> prev != null ? prev + 1 : 1);
+		HashMap<Character, Integer> map = new HashMap<Character, Integer>();
+		for (char c:word.toCharArray()) {
+			map.compute(c, (key, prev) -> prev != null ? prev + 1 : 1);
 		}
-		for (int i=0;i<anagram.length();i++) {
-			map.merge(anagram.charAt(i),1L, (w, prev) -> prev != null ? prev - 1 : 1);	
+		for (char c:anagram.toCharArray()) {
+			map.merge(c,1, (c1, c2) -> c1 -c2==0?null:c1-c2  );	
 		}
-		for (Long val : map.values()){
-		   if (val>0)
-			   return false;
-		}		
-		return true;
+		return map.isEmpty();
 
 	}
 }
