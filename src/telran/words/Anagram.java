@@ -6,7 +6,7 @@ public class Anagram {
 	// additional requirement: create only one map with applying methods merge and
 	// compute
 	public static boolean isAnagram(String word, String anagram) {
-		if (word.length() == 0 || anagram.length() == 0 || word.length() != anagram.length() || word == anagram)
+		if (word.length() == 0 || anagram.length() == 0 || word.length() != anagram.length() || word.equals(anagram))
 			return false;
 
 	/*simple first solution
